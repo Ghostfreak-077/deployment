@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build: 
+      context: ../React_app/
+      dockerfile: Dockerfile
+    image: simple_react_app
+    ports:
+      - 3000:3000
+    container_name: simple_react_app
