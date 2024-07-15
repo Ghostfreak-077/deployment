@@ -18,3 +18,9 @@ Alternatively in an imperative way, from ```/React_app``` directory:
 
 - Build the docker image using ```docker image build -t simple-image .```
 - Run an interactive container using ```docker run -it --name simple-container -p 3000:3000 simple-image```
+
+# Using Kubernetes
+
+Check if ```kubectl``` and ```minikube``` are installed and updated. Once installed, we need to create a cluster by ```minikube start```
+
+From the ```/deployment_files/k8s/``` directory, ```kubectl apply -f .``` will create the required pod and service. Once it's up and running, ```minikube ip``` will the return the IP address, and ```kubectl get service``` will show the port of 'react-app-service' service. Finally, ```http://<minikube>:<port>``` will show the page
