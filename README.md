@@ -19,7 +19,7 @@ Alternatively in an imperative way, from ```/React_app``` directory:
 - Build the docker image using ```docker image build -t simple-image .```
 - Run an interactive container using ```docker run -it --name simple-container -p 3000:3000 simple-image```
 
-# Using Kubernetes
+### Using Kubernetes
 
 Check if ```kubectl``` and ```minikube``` are installed and updated. Once installed, we need to create a cluster by ```minikube start```
 
