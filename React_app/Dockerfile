@@ -1,18 +1,16 @@
 # Set the working directory
-FROM node:20-alpine
+FROM node:lts-alpine
 
 EXPOSE 3000
 
-WORKDIR /app
+RUN npm install -g serve
 
-COPY package*.json ./
-
-RUN npm install
+WORKDIR /app/files
 
 COPY . .
 
-RUN npm run build
+RUN npm install && npm run build && cp -r ./dist ../dist && rm -rf ./files
 
-RUN npm install -g serve
+WORKDIR /app
 
 CMD ["serve", "-s", "dist"]
